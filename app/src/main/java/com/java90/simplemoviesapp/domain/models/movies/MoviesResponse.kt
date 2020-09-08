@@ -1,8 +1,8 @@
 package com.java90.simplemoviesapp.domain.models.movies
 
-data class Movie(
+data class ResponseMovies(
     val page: Int,
-    val results: List<Result>,
+    val results: List<Movie>,
     //val total_pages: Int,
     //val total_results: Int
 )
