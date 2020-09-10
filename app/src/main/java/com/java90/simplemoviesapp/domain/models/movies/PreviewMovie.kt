@@ -1,18 +1,19 @@
 package com.java90.simplemoviesapp.domain.models.movies
 
-data class Result(
-    val adult: Boolean,
+data class Movie (
     val backdrop_path: String,
-    //val genre_ids: List<Int>,
     val id: Int,
     val original_language: String,
-    val original_title: String,
     val overview: String,
     val popularity: Double,
     val poster_path: String,
     val release_date: String,
     val title: String,
-    val video: Boolean,
-    val vote_average: Int,
-    val vote_count: Int
+    val vote_average: Int
+
+    //val adult: Boolean,
+    //val genre_ids: List<Int>,
+    //val original_title: String,
+    //val video: Boolean,
+    //val vote_count: Int
 )
