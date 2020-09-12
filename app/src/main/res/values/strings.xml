@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">SimpleMoviesApp</string>
+
+    <string name="titleMovieFragment">MOVIES</string>
+    <string name="titleSeriesFragment">SERIES</string>
+    <string name="genreDrama">Drama</string>
+    <string name="genreAction">Action</string>
+    <string name="genreRomance">Romance</string>
+    <string name="genreComedy">Comedy</string>
+
+    <string name="boxLanguage">Language: </string>
+
+    <string name="loadingMovies">Loading Movies…</string>
+    <string name="loadingSeries">Loading Series…</string>
+    <string name="errorLoadingMovies">Error: Check Connection Internet</string>
+
 </resources>

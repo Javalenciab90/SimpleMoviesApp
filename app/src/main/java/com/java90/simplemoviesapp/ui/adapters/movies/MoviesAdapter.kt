@@ -1,4 +1,4 @@
-package com.java90.simplemoviesapp.ui.adapters
+package com.java90.simplemoviesapp.ui.adapters.movies
 
 import android.os.Bundle
 import android.view.LayoutInflater

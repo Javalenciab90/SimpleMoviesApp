@@ -1,29 +1,55 @@
 package com.java90.simplemoviesapp.domain.models.movies
 
-data class ResponseDetailMovie(
-    val adult: Boolean,
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
+data class DetailMovie (
+
+    @SerializedName("backdrop_path")
+    @Expose
     val backdrop_path: String,
-    val belongs_to_collection: Any,
-    val budget: Int,
-    val genres: List<Genre>,
-    val homepage: String,
+    @SerializedName("id")
+    @Expose
     val id: Int,
-    val imdb_id: String,
-    val original_language: String,
-    val original_title: String,
+    @SerializedName("overview")
+    @Expose
     val overview: String,
-    val popularity: Double,
+    @SerializedName("poster_path")
+    @Expose
     val poster_path: String,
-    val production_companies: List<ProductionCompany>,
-    val production_countries: List<ProductionCountry>,
+    @SerializedName("release_date")
+    @Expose
     val release_date: String,
-    val revenue: Int,
+    @SerializedName("runtime")
+    @Expose
     val runtime: Int,
-    val spoken_languages: List<SpokenLanguage>,
+    @SerializedName("status")
+    @Expose
     val status: String,
-    val tagline: String,
+    @SerializedName("title")
+    @Expose
     val title: String,
-    val video: Boolean,
-    val vote_average: Int,
-    val vote_count: Int
+    @SerializedName("vote_average")
+    @Expose
+    val vote_average: Double,
+    @SerializedName("original_language")
+    @Expose
+    val original_language: String
+
+    //val popularity: Double,
+    //val original_language: String
+    //val revenue: Int,
+    //val adult: Boolean,
+    //val spoken_languages: List<SpokenLanguage>,
+    //val vote_count: Int,
+    //val video: Boolean,
+    //val tagline: String,
+    //val belongs_to_collection: Any,
+    //val budget: Int,
+    //val genres: List<Genre>,
+    //val homepage: String,
+    //val imdb_id: String,
+    //val original_title: String,
+    //val production_companies: List<ProductionCompany>,
+    //val production_countries: List<ProductionCountry>,
 )

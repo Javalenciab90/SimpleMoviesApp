@@ -1,11 +1,13 @@
 package com.java90.simplemoviesapp.interactors
 
-import com.java90.simplemoviesapp.domain.GetAllPreviewMovies
+import com.java90.simplemoviesapp.domain.SetAllPreviewMovies
 import com.java90.simplemoviesapp.domain.models.movies.CategoryMovies
+import javax.inject.Inject
 
-class CategoryMoviesUseCase (private val getAllPreviewMovies: GetAllPreviewMovies) {
+class CategoryMoviesUseCase
+    @Inject constructor(private val allPreviewMovies: SetAllPreviewMovies) {
 
     suspend fun getAllCategoryMovies() : List<CategoryMovies> {
-        return getAllPreviewMovies.getAllCategory()
+        return allPreviewMovies.setAllCategoryOnList()
     }
 }

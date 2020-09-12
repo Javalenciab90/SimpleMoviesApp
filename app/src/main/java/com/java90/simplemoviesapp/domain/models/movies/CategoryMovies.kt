@@ -1,9 +1,7 @@
-package com.java90.simplemoviesapp.domain.models
-
-import com.java90.simplemoviesapp.domain.models.movies.PreviewMovie
+package com.java90.simplemoviesapp.domain.models.movies
 
 
-data class Category(
+data class CategoryMovies(
     val categoryTitle: String,
-    var categoryItems : List<PreviewMovie>
+    var categoryItems : List<DiscoverMovie>
 )

@@ -5,7 +5,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import com.java90.simplemoviesapp.R
 
-class FavoritesFragment : Fragment() {
+class FavoritesMoviesFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {

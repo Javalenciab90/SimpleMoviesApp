@@ -5,8 +5,10 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
+// DiscoverMovie -> Previews movie poster to show in MoviesFragment
+
 @Parcelize
-data class PreviewMovie (
+data class DiscoverMovie (
 
     @SerializedName("id")
     @Expose
