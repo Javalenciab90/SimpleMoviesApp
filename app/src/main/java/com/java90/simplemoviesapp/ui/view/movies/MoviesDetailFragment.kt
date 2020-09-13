@@ -1,6 +1,5 @@
 package com.java90.simplemoviesapp.ui.view.detailMovie
 
-import android.app.ActionBar
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
@@ -14,14 +13,13 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.java90.simplemoviesapp.R
 import com.java90.simplemoviesapp.domain.models.movies.DetailMovie
+import com.java90.simplemoviesapp.domain.models.movies.DiscoverMovie
 import com.java90.simplemoviesapp.domain.utils.Constants.Companion.BASE_URL_IMAGE_BACKGROUND
 import com.java90.simplemoviesapp.domain.utils.Resource
 import com.java90.simplemoviesapp.domain.utils.hideProgressBar
 import com.java90.simplemoviesapp.domain.utils.showProgressBar
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_movies.*
 import kotlinx.android.synthetic.main.fragment_movies_detail.*
-
 
 @AndroidEntryPoint
 class MoviesDetailFragment : Fragment() {
@@ -45,32 +43,10 @@ class MoviesDetailFragment : Fragment() {
 
 
         val discoverMovie = args.discoverMovie
-
-        viewModel.getDetailsMovieById(discoverMovie.id).observe(viewLifecycleOwner,
-            Observer { responseDetailMovie ->
-
-                when (responseDetailMovie) {
-                    is Resource.Loading -> {
-                        progressBar_detailMovie.showProgressBar()
-                    }
-                    is Resource.Success -> {
-                        if (responseDetailMovie.data!!.isSuccessful) {
-                            progressBar_detailMovie.hideProgressBar()
-                            responseDetailMovie.data.body()?.let { movie ->
-                                setUpInfoMovie(movie)
-                            }
-                        }
-                    }
-                    is Resource.Failure -> {
-                        progressBar_detailMovie.hideProgressBar()
-                        Snackbar.make(view, "connection problem", Snackbar.LENGTH_LONG).show()
-                    }
-                }
-            }
-        )
+        setUpInfoMovie(discoverMovie)
     }
 
-    private fun setUpInfoMovie(movie: DetailMovie) {
+    private fun setUpInfoMovie(movie: DiscoverMovie) {
 
         tv_title_name.text = movie.title
         tv_language.text = movie.original_language
@@ -80,7 +56,6 @@ class MoviesDetailFragment : Fragment() {
             text = movie.overview
         }
         tv_date.text = movie.release_date
-        tv_runtime.text = "${movie.runtime} min"
         ratingBar.rating = String.format("%.0f", (movie.vote_average / 2).toFloat()).toFloat()
 
         Glide.with(this)
