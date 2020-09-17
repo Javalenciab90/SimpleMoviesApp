@@ -34,7 +34,7 @@ class MoviesFragment : Fragment() {
 
         iniMainAdapter()
 
-        viewModel.getAllCategoryPreviewMovies().observe(viewLifecycleOwner,
+        viewModel.moviesByCategory.observe(viewLifecycleOwner,
             Observer {result ->
 
                 when(result) {
@@ -48,8 +48,8 @@ class MoviesFragment : Fragment() {
                         adapter.differ.submitList(result.data)
                     }
                     is Resource.Failure -> {
-                        tv_loading_movies.text = getString(R.string.errorLoadingMovies)
-                        context?.showToast(result.message.toString())
+                        tv_loading_movies.text = getString(R.string.errorLoading)
+                        context?.showToast(result.toString())
                     }
                 }
             }

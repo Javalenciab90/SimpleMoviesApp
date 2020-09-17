@@ -2,6 +2,8 @@ package com.java90.simplemoviesapp.di
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.java90.simplemoviesapp.data.network.NetworkDataSource
+import com.java90.simplemoviesapp.data.network.NetworkDataSourceImpl
 import com.java90.simplemoviesapp.domain.utils.Constants.Companion.BASE_URL
 import com.java90.simplemoviesapp.framwork.api.ApiService
 import dagger.Module
@@ -80,4 +82,9 @@ object NetworkModule {
         return retrofit.create(ApiService::class.java)
     }
 
+    @Singleton
+    @Provides
+    fun provideNetworkDataSource(apiService: ApiService) : NetworkDataSource {
+        return NetworkDataSourceImpl(apiService)
+    }
 }

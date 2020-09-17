@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.row_child_recycler.view.*
 
 class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
 
-    private lateinit var itemAdapter: CategoryItemAdapter
+    private lateinit var itemAdapter: MoviesItemAdapter
 
     private val differCallBack = object : DiffUtil.ItemCallback<CategoryMovies>() {
 
@@ -55,10 +55,10 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
         }
     }
 
-    class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     private fun iniItemRecycler(recyclerView: RecyclerView, categoryItems: List<DiscoverMovie>) {
-        itemAdapter = CategoryItemAdapter(categoryItems)
+        itemAdapter = MoviesItemAdapter(categoryItems)
         recyclerView.apply {
             adapter = itemAdapter
             layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)

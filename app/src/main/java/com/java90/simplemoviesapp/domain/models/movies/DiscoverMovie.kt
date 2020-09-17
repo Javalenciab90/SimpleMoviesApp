@@ -5,8 +5,6 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-// DiscoverMovie -> Previews movie poster to show in MoviesFragment
-
 @Parcelize
 data class DiscoverMovie (
 
@@ -19,16 +17,20 @@ data class DiscoverMovie (
     @SerializedName("title")
     @Expose
     val title: String,
+    @SerializedName("backdrop_path")
+    @Expose
+    val backdrop_path: String,
+    @SerializedName("vote_average")
+    @Expose
+    val vote_average: Double,
+    @SerializedName("original_language")
+    @Expose
+    val original_language: String,
+    @SerializedName("release_date")
+    @Expose
+    val release_date: String,
+    @SerializedName("overview")
+    @Expose
+    val overview: String
 
-    //val adult: Boolean,
-    //val backdrop_path: String,
-    //val genre_ids: List<Int>,
-    //val video: Boolean,
-    //val vote_average: Double,
-    //val vote_count: Int,
-    //val original_language: String,
-    //val original_title: String,
-    //val overview: String,
-    //val popularity: Double,
-    //val release_date: String,
 ) : Parcelable

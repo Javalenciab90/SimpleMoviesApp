@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movies_nav_graph"
     app:startDestination="@id/moviesFragment">
 
     <fragment
         android:id="@+id/moviesFragment"
-        android:name="com.java90.simplemoviesapp.ui.view.movies.MoviesFragment">
+        android:name="com.java90.simplemoviesapp.ui.view.movies.MoviesFragment"
+        tools:layout="@layout/fragment_movies">
         <action
             android:id="@+id/action_moviesFragment_to_detailMovieFragment"
             app:destination="@id/detailMovieFragment"
@@ -15,38 +16,14 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_moviesFragment_to_favoritesFragment"
-            app:destination="@id/favoritesMoviesFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/seriesFragment"
-        android:name="com.java90.simplemoviesapp.ui.view.series.SeriesFragment">
+        android:id="@+id/TvShowsFragment"
+        android:name="com.java90.simplemoviesapp.ui.view.tvshows.TvShowsFragment"
+        tools:layout="@layout/fragment_tv_shows">
         <action
             android:id="@+id/action_seriesFragment_to_seriesDetailFragment"
-            app:destination="@id/seriesDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-        <action
-            android:id="@+id/action_seriesFragment_to_favoritesSeriesFragment"
-            app:destination="@id/favoritesSeriesFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-    </fragment>
-    <fragment
-        android:id="@+id/favoritesMoviesFragment"
-        android:name="com.java90.simplemoviesapp.ui.view.favorites.FavoritesMoviesFragment">
-        <action
-            android:id="@+id/action_favoritesFragment_to_detailMovieFragment"
-            app:destination="@id/detailMovieFragment"
+            app:destination="@id/tvShowDetailFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -55,25 +32,36 @@
 
     <fragment
         android:id="@+id/detailMovieFragment"
-        android:name="com.java90.simplemoviesapp.ui.view.detailMovie.MoviesDetailFragment">
+        android:name="com.java90.simplemoviesapp.ui.view.movies.MoviesDetailFragment"
+        tools:layout="@layout/fragment_movies_detail">
         <argument
             android:name="discoverMovie"
             app:argType="com.java90.simplemoviesapp.domain.models.movies.DiscoverMovie" />
     </fragment>
 
     <fragment
-        android:id="@+id/seriesDetailFragment"
-        android:name="com.java90.simplemoviesapp.ui.view.detailSerie.SeriesDetailFragment" />
+        android:id="@+id/tvShowDetailFragment"
+        android:name="com.java90.simplemoviesapp.ui.view.tvshows.TvShowDetailFragment"
+        tools:layout="@layout/fragment_movies_detail">
+        <argument
+            android:name="discoverTvShow"
+            app:argType="com.java90.simplemoviesapp.domain.models.tvShows.DiscoverTvShow" />
+    </fragment>
     <fragment
-        android:id="@+id/favoritesSeriesFragment"
-        android:name="com.java90.simplemoviesapp.ui.view.favorites.FavoritesSeriesFragment">
+        android:id="@+id/peopleFragment"
+        android:name="com.java90.simplemoviesapp.ui.view.starts.PeopleFragment"
+        tools:layout="@layout/fragment_people">
         <action
-            android:id="@+id/action_favoritesSeriesFragment_to_seriesDetailFragment"
-            app:destination="@id/seriesDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            android:id="@+id/action_peopleFragment_to_detailPersonFragment"
+            app:destination="@id/detailPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPersonFragment"
+        android:name="com.java90.simplemoviesapp.ui.view.starts.DetailPersonFragment"
+        tools:layout="@layout/fragment_detail_person">
+        <argument
+            android:name="person"
+            app:argType="com.java90.simplemoviesapp.domain.models.starts.Person" />
     </fragment>
 
 </navigation>

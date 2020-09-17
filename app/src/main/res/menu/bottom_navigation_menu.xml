@@ -7,12 +7,12 @@
         android:icon="@drawable/ic_movies"/>
 
     <item
-        android:id="@+id/seriesFragment"
+        android:id="@+id/TvShowsFragment"
         android:title="Series"
         android:icon="@drawable/ic_series"/>
 
     <item
-        android:id="@+id/favoritesMoviesFragment"
-        android:title="Favorites"
-        android:icon="@drawable/ic_favorites"/>
+        android:id="@+id/peopleFragment"
+        android:title="Starts"
+        android:icon="@drawable/ic_starts"/>
 </menu>

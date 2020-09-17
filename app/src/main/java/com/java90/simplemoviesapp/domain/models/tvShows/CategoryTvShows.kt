@@ -1,6 +1,4 @@
-package com.java90.simplemoviesapp.domain.models.series
-
-import com.java90.simplemoviesapp.domain.models.movies.DiscoverMovie
+package com.java90.simplemoviesapp.domain.models.tvShows
 
 data class CategoryTvShows(
     val categoryTitle: String,

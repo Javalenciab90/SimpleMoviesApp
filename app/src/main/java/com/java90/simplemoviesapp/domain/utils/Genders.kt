@@ -11,7 +11,7 @@ enum class MoviesGenre(var value: Int) {
     }
 }
 
-enum class SeriesGenre(var value: Int) {
+enum class TvShowsGenre(var value: Int) {
     COMEDY(35),
     KIDS(10762),
     DRAMA(18);

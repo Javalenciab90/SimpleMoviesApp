@@ -1,8 +1,11 @@
-package com.java90.simplemoviesapp.domain.models.series
+package com.java90.simplemoviesapp.domain.models.tvShows
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class DiscoverTvShow(
 
     @SerializedName("id")
@@ -13,16 +16,18 @@ data class DiscoverTvShow(
     val name: String,
     @SerializedName("poster_path")
     @Expose
-    val poster_path: String
+    val poster_path: String,
+    @SerializedName("vote_average")
+    @Expose
+    val vote_average: Double,
+    @SerializedName("overview")
+    @Expose
+    val overview: String,
+    @SerializedName("first_air_date")
+    @Expose
+    val first_air_date: String,
+    @SerializedName("original_language")
+    @Expose
+    val original_language: String
 
-
-    //val vote_average: Double,
-    //val vote_count: Int,
-    //val origin_country: List<String>,
-    //val original_language: String,
-    //val original_name: String,
-    //val overview: String,
-    //val popularity: Double,
-    //val first_air_date: String,
-    //val genre_ids: List<Int>,
-)
+) : Parcelable

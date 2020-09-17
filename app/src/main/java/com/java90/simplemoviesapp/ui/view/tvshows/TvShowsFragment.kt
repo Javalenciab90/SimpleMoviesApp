@@ -1,4 +1,4 @@
-package com.java90.simplemoviesapp.ui.view.tvShows
+package com.java90.simplemoviesapp.ui.view.tvshows
 
 import android.os.Bundle
 import android.view.*
@@ -8,9 +8,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.java90.simplemoviesapp.R
 import com.java90.simplemoviesapp.domain.utils.*
-import com.java90.simplemoviesapp.ui.adapters.tvShows.TVShowAdapter
+import com.java90.simplemoviesapp.ui.adapters.tvshows.TVShowAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_movies.*
 import kotlinx.android.synthetic.main.fragment_tv_shows.*
 
 @AndroidEntryPoint
@@ -47,7 +46,7 @@ class TvShowsFragment : Fragment() {
                         adapter.differ.submitList(result.data)
                     }
                     is Resource.Failure -> {
-                        tv_loading_tvShows.text = getString(R.string.errorLoadingMovies)
+                        tv_loading_tvShows.text = getString(R.string.errorLoading)
                         context?.showToast("dddd")
                     }
                 }

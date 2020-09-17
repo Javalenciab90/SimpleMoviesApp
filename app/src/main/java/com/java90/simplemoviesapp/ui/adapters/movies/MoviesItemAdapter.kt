@@ -10,24 +10,24 @@ import com.java90.simplemoviesapp.domain.models.movies.DiscoverMovie
 import com.java90.simplemoviesapp.domain.utils.Constants.Companion.BASE_URL_IMAGE_POSTER
 import kotlinx.android.synthetic.main.row_item.view.*
 
-class CategoryItemAdapter(private val categoryItems: List<DiscoverMovie>)
-    : RecyclerView.Adapter<CategoryItemAdapter.CategoryItemViewHolder>() {
+class MoviesItemAdapter(private val categoryItems: List<DiscoverMovie>)
+    : RecyclerView.Adapter<MoviesItemAdapter.MoviesItemViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesItemViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.row_item, parent, false)
 
-        return CategoryItemViewHolder(view)
+        return MoviesItemViewHolder(view)
     }
 
     override fun getItemCount(): Int = categoryItems.size
 
-    override fun onBindViewHolder(holder: CategoryItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MoviesItemViewHolder, position: Int) {
 
         val movieItem = categoryItems[position]
 
         holder.itemView.apply {
-            tv_movie_info.text = movieItem.title
+            tv_title_info.text = movieItem.title
 
             Glide.with(this)
                 .load("$BASE_URL_IMAGE_POSTER${movieItem.poster_path}")
@@ -43,7 +43,7 @@ class CategoryItemAdapter(private val categoryItems: List<DiscoverMovie>)
         }
     }
 
-    class CategoryItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    class MoviesItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     private var onItemClickListener: ((DiscoverMovie) -> Unit)? = null
     fun setOnItemClickListener(listener : (DiscoverMovie) -> Unit) {

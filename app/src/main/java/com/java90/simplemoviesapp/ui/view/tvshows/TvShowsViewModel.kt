@@ -1,4 +1,4 @@
-package com.java90.simplemoviesapp.ui.view.tvShows
+package com.java90.simplemoviesapp.ui.view.tvshows
 
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject

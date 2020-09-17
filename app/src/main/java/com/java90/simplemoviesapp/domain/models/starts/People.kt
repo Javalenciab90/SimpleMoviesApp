@@ -1,8 +1,12 @@
 package com.java90.simplemoviesapp.domain.models.starts
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
 data class People(
-    val page: Int,
-    val results: List<Result>,
-    val total_pages: Int,
-    val total_results: Int
+
+    @SerializedName("results")
+    @Expose
+    val results: List<Person>
+
 )

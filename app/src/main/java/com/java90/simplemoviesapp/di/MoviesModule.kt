@@ -17,12 +17,6 @@ object MoviesModule {
 
     @Singleton
     @Provides
-    fun provideNetworkDataSource(apiService: ApiService) : NetworkDataSource {
-        return NetworkDataSourceImpl(apiService)
-    }
-
-    @Singleton
-    @Provides
     fun provideAllPreviewMovies(networkDataSource: NetworkDataSource) : SetAllPreviewMovies {
         return SetAllPreviewMovies(networkDataSource)
     }

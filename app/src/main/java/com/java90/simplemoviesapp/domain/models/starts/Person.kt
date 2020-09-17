@@ -1,9 +1,12 @@
 package com.java90.simplemoviesapp.domain.models.starts
 
+import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
-data class Result(
+@Parcelize
+data class Person(
 
     @SerializedName("id")
     @Expose
@@ -14,4 +17,4 @@ data class Result(
     @SerializedName("profile_path")
     @Expose
     val profile_path: String
-)
+) : Parcelable

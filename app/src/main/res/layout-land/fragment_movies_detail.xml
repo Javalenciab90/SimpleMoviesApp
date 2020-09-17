@@ -25,39 +25,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_favorites" />
-
-    <ProgressBar
-        android:id="@+id/progressBar_detailMovie"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="9dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
-
     <TextView
         android:id="@+id/tv_title_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:textColor="@color/primaryTextColor"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RatingBar
@@ -99,10 +75,11 @@
         android:id="@+id/tittle_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/boxLanguage"
         android:textColor="@color/secondaryTextColor"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_name" />
 
     <TextView
@@ -117,26 +94,6 @@
         app:layout_constraintStart_toEndOf="@+id/tittle_language"
         app:layout_constraintTop_toTopOf="@+id/tittle_language" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/tittle_language"
-        app:layout_constraintTop_toBottomOf="@+id/tittle_language"
-        app:srcCompat="@drawable/ic_runtime" />
-
-    <TextView
-        android:id="@+id/tv_runtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/primaryTextColor"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/tv_language"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
     <TextView
         android:id="@+id/tv_overview"
         android:layout_width="0dp"
@@ -150,7 +107,7 @@
         android:textColor="@color/primaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/tv_date" />
 
     <TextView
@@ -160,8 +117,8 @@
         android:layout_marginTop="8dp"
         android:text="Date: "
         android:textColor="@color/secondaryTextColor"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/tittle_language"
+        app:layout_constraintTop_toBottomOf="@+id/tittle_language" />
 
     <TextView
         android:id="@+id/tv_date"

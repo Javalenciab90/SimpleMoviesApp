@@ -1,4 +1,4 @@
-package com.java90.simplemoviesapp.ui.adapters.tvShows
+package com.java90.simplemoviesapp.ui.adapters.tvshows
 
 import android.view.LayoutInflater
 import android.view.View
